@@ -1001,15 +1001,16 @@ def save_si_video(r8_in, particle_list_in, constants, tag, offset=0):
         
    
         # draw the voltage trace
-        span   = 196                # length of trace
-        txp    = 8                 # trace x position
+        span   = 196                # length of trace (in voltage data points = frames)
+        txp    = 8                  # trace x position
         typ    = 180                # trace y position
         tyh    = 50                 # trace height (this is essentially a multiplier for the voltage)
         #x_off = -20
         n_tot = constants["frame total"]                                         # total number of frames
         #print(fnum, offset, span, n_tot)
+        #print(fnum, span, (fnum + offset + span), n_tot)
         if fnum > span and fnum + offset + span < n_tot:                         # you will get array errors if you run this on the whole array so this makes sure that doesnt happen
-            
+            print("ok")
             trace = np.array(voltdata.iloc[fnum+offset-span:(fnum+offset), 0])   # trace is a snippit of the voltage frame array. trace is what we print on the screen 
             #print(fnum, len(trace), trace[0], trace[-1])
             #print(trace)
