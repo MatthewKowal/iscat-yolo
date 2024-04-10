@@ -1,0 +1,25 @@
+
+
+
+
+6/30/2022 2:56 PM Recording Experiment Video...
+Experiment Name: 50nm PS 2000 PDL pH7 Laser120mW
+
+Auto Exposure:         Off
+Exposure Time:         1758
+Auto Frame Rate:      Off
+Frame Rate:                68
+Auto Gain:                  Off
+Gain:                             0
+Video Mode:              2
+Resolution:                 512 x 512
+X/Y offset:                   356 x 256
+Binning:                      1 x 2
+Bit Depth: (bits /px):   8
+
+Laser Power (mW): 120
+Field of View (um): 12
+
+Video Duration: 17.2363 Seconds
+testing ratiometric image processing in labview using IMAQ routines
+
