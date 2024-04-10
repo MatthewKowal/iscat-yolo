@@ -1,5 +1,6 @@
 # iscat-yolo 
 ![EPD-iSCAT Graphical Abstract](https://github.com/MatthewKowal/iscat-yolo/blob/main/figures/iscat%20graphical%20abstract.png)
+
 iscat-yolo is an automated particle detection, localization, and measurement tool for processing raw video from an iSCAT microscope. Video pre-processing utilizes ratiometric imaging to amplify the weak signal from scattering nanoparticles as small as 5 nm while simultaneously subtracting the background and averaging away noise. Fast and facile particle detection is performed using Ultralytics YOLO ver. 8 trained on a annotated particle image dataset built from experimental data. The dataset is publicly available on Roboflow and the trained model is available in the repository. Output is generated in the form of spreadsheets containing particle data, images containing data plots, and processed video data. This work was developed during my PhD in Chemistry at the University of British Columbia in Canada and has been published in ACS Nano in 2024.
 
   ACS Nano: https://doi.org/10.1021/acsnano.3c09221
@@ -29,14 +30,19 @@ The general workflow is as follows:
 
 ### Image processing Algorithm
 ![Image processing steps](https://github.com/MatthewKowal/iscat-yolo/blob/main/figures/image%20processing.png)
+
 Image processing & particle finding are performed sequentially, frame by frame. A) Bright laser light reflecting off of the coverslip drowns out the weak scattering signal of sub-wavelength sized nanoparticles, making the particles impossible to detect in a raw iSCAT video. B) a ratiometric image processing algorithm normalizes and mean-centers the unchanging background reflection while amplifying changes in local image intensity between frames, which occurs when a nanoparticle collides with the in-focus coverslip surface. C) The well-defined, high contrast particle deposition events are detected and localized using a YOLOv8 object detection model trained on a [custom dataset](https://universe.roboflow.com/iscat-particle-image-library/iscat-particle-image-library).
 
 ## Example Output
 ![Contrast Histogram](https://github.com/MatthewKowal/iscat-yolo/blob/main/figures/sample%20output.png)
+
 Above left, A histogram of optical scattering intensity signals measures as polystyrene nanoparticles are deposited electrohoretically onto a charged indium tin oxide coated glass coverslip. Above right, a cumulative count of nanoparticle depositions over time (blue) with a modulating DC electric field (orange).
 
-Example output video showing initiation and extinction of 50 nm Polystyrene Nanoplastics deposition onto a coverslip during an EPD-iSCAT experiment.
-[Video 1](https://figshare.com/articles/media/Electrophoretic_Deposition_Interferometric_Scattering_Microscopy_EPD-iSCAT_voltage_controlled_deposition_and_detection_of_50_nm_polystyrene_nanoparticles_/24185811)
+
+<p align="center">
+<img src=https://github.com/MatthewKowal/iscat-yolo/assets/13578147/479c75f4-5039-4c8b-92ff-ee0b07ec8545>
+</p>
+See the <a href="https://figshare.com/articles/media/Electrophoretic_Deposition_Interferometric_Scattering_Microscopy_EPD-iSCAT_voltage_controlled_deposition_and_detection_of_50_nm_polystyrene_nanoparticles_/24185811">example output video on figshare</a>. The example output video processed from raw data collected on an EPD-iSCAT microscope. The output video features a) sub-wavelength scattering signal enhancement by ratiometric imaging, b) the electrophoretic deposition of 50 nm polystyrene nanoparticles depositing onto an indium tin oxide coated glass coverslip, c) followed by an immediate end of deposition when the electric potential is removed.
 
 
 
