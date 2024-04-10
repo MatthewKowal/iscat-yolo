@@ -135,30 +135,7 @@ def get_bin_metadata(binfile, printmeta=True):
         print("\tRemaining Bytes: \t", remaining_bytes)
 
     return basepath, filename, name, nframes, fov, x, y, fps, voltfile
-
-# def get_video_metadata(binfile):
-#     #could replace this with a get_video_metadata function (should write one)
-#     basepath = os.path.join(script_dir, "example")
-#     filename = "filename"
-#     nframes  = binimages.shape[0]
-#     fov      = 12 #microns
-#     x        = binimages.shape[1]
-#     y        = binimages.shape[2]
-#     fps      = 200
-#     filesize = os.path.getsize(mp4file)
-#     name     = "date_time_raw"+"_"+str(fov)+"_"+str(x)+"_"+str(fps)
-#     print("\nVideo File Properties:")
-#     print("\tLocation: \t", os.path.split(mp4file)[0])
-#     print("\tFilename: \t", os.path.split(mp4file)[1])
-#     print("\tSquare FOV (um): \t", fov)
-#     print("\tX Resolution : \t\t", x)
-#     print("\tY Resolution : \t\t", y)
-#     print("\tFrames per second:  ", fps)
-#     print("\tFile Size: \t\t\t", filesize)
-#     print("\tNumber of frames: \t", nframes)
-#     print("\tRunning time:(s) \t", (nframes/fps), " seconds")
-#     print("\tRunning time (m): \t", (nframes/fps/60), " minutes")
-#     return basepath, filename, name, nframes, fov, x, y, fps 
+ 
 
 
 def load_binfile_into_array(binfile, print_time=True): #open a binfile and import data into image array
